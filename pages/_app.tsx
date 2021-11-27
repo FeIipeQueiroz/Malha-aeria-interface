@@ -4,7 +4,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Monitoramento de Pacientes</title>
+        <title>Malha Aeria</title>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link
           rel="preconnect"
