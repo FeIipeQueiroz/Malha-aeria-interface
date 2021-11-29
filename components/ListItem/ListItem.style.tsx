@@ -10,8 +10,12 @@ export const ListItemStyled = styled(ListItem)`
   width: "fit-content";
   min-width: 190px;
   padding: 4px;
+  -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
-  animation-duration: 0.5s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 
   .fadeInUp {
     -webkit-animation-name: fadeInUp;

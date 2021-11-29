@@ -2,10 +2,10 @@ import {
   Typography,
   ListItemAvatar,
   ListItemSecondaryAction,
-  Button,
 } from "@mui/material";
 import React from "react";
 import { ListItemStyled, ColumnStyled } from "./ListItem.style";
+import Button from "../Button/Button";
 
 const ListItem = (props) => {
   return (
