@@ -3,7 +3,9 @@ import { CardContainer, CardContent } from "./Card.style";
 const Card = (props) => {
   return (
     <CardContainer>
-      <CardContent>{props.children}</CardContent>
+      <CardContent data-color={props["data-color"]}>
+        {props.children}
+      </CardContent>
     </CardContainer>
   );
 };

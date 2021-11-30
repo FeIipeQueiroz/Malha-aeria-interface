@@ -60,4 +60,10 @@ export const ColumnStyled = styled("div")`
   min-height: 90px;
   max-height: 90px;
   flex-wrap: nowrap;
+  :hover {
+    transform: scale(1);
+  }
+
+  transform: scale(0.97);
+  transition: transform ease 0.3s;
 `;

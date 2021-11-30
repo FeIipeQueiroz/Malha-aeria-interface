@@ -1,6 +1,7 @@
+import { AxiosInstance } from "axios";
 import { useState } from "react";
 
-export function useIndex() {
+export function useIndex(ApiService: AxiosInstance) {
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
   const [loading, setLoading] = useState(false);

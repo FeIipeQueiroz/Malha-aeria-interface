@@ -1,16 +1,14 @@
-import {
-  Typography,
-  ListItemAvatar,
-  ListItemSecondaryAction,
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import React from "react";
 import { ListItemStyled, ColumnStyled } from "./ListItem.style";
 import Button from "../Button/Button";
 
 const ListItem = (props) => {
+  let color = props.color;
+  let secondColor = props.secondColor;
   return (
     <ListItemStyled>
-      <ColumnStyled sx={{ backgroundColor: "#C4C4C4" }}>
+      <ColumnStyled sx={{ backgroundColor: secondColor }}>
         <Typography sx={{ fontSize: "1.2rem", margin: "0px", padding: "0px" }}>
           Teste
         </Typography>
@@ -23,7 +21,7 @@ const ListItem = (props) => {
       </ColumnStyled>
 
       <Button
-        color="success"
+        color={color}
         variant="contained"
         sx={{ minWidth: "170px", minHeight: "90px", maxHeight: "90px" }}
         onClick={() => {}}

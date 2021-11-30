@@ -24,11 +24,11 @@ export const CardContent = styled("div")`
     height: 5px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #2e7d32;
+    background: ${(props) => props["data-color"]};
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2e7d32;
+    background: ${(props) => props["data-color"]};
   }
   ::-webkit-scrollbar-track {
     background: #ffffff;

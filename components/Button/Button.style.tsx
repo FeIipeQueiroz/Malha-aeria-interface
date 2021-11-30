@@ -6,7 +6,6 @@ export const ButtonStyled = styled(Button)`
     transform: scale(1);
   }
 
-  -webkit-transform: scale(0.88);
-  transform: scale(0.88);
+  transform: scale(0.9);
   transition: transform ease 0.3s;
 `;

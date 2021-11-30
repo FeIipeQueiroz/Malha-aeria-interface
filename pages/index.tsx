@@ -1,70 +1,50 @@
 import React from "react";
-import { Container } from "@mui/material";
-import TextInput from "../components/TextInput/TextInput";
-import Row from "../components/Row/Row";
-import Card from "../components/Card/Card";
-import { useIndex } from "../data/hooks/useIndex";
-import { CircularProgress } from "@mui/material";
-import List from "../components/List/List";
-import ListItem from "../components/ListItem/ListItem";
+import { Container, Typography } from "@mui/material";
 import Button from "../components/Button/Button";
-export default function Home() {
-  const {
-    origin,
-    setOrigin,
-    destination,
-    setDestination,
-    loading,
-    searchDone,
-    sendCities,
-  } = useIndex();
-
+import Router from "next/router";
+export default function index() {
   return (
-    <Container sx={{ alignItems: "center" }}>
-      <Row>
-        <TextInput
-          value={origin}
-          variant="outlined"
-          label="Origem"
-          onChange={(event) => setOrigin(event.target.value)}
-        ></TextInput>
-        <TextInput
-          value={destination}
-          variant="outlined"
-          label="Destino"
-          onChange={(event) => setDestination(event.target.value)}
-        ></TextInput>
-        <Button
-          disabled={loading}
-          color="success"
-          variant="contained"
-          sx={{ minWidth: "9.4vw" }}
-          onClick={() => {
-            sendCities(origin, destination);
-          }}
-        >
-          ENVIAR
-        </Button>
-      </Row>
-      <Card>
-        {loading && (
-          <CircularProgress
-            size="10rem"
-            sx={{ alignSelf: "center", margin: "auto" }}
-          />
-        )}
-        {searchDone && (
-          <List>
-            <ListItem />
-            <ListItem />
-            <ListItem />
-            <ListItem />
-            <ListItem />
-            <ListItem />
-            <ListItem />
-          </List>
-        )}
-      </Card>
+    <Container
+      sx={{
+        margin: "auto",
+        alignSelf: "center",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        minHeight: "100vh",
+        minWidth: "100vw",
+      }}
+    >
+      <Button
+        color="success"
+        variant="contained"
+        sx={{ minHeight: "100px", minWidth: "100px" }}
+        onClick={() => {
+          Router.push("/A");
+        }}
+      >
+        <Typography sx={{ fontSize: "50px" }}>A</Typography>
+      </Button>
+      <Button
+        color="info"
+        variant="contained"
+        sx={{ minHeight: "100px", minWidth: "100px" }}
+        onClick={() => {
+          Router.push("/B");
+        }}
+      >
+        <Typography sx={{ fontSize: "50px" }}>B</Typography>
+      </Button>
+      <Button
+        color="warning"
+        variant="contained"
+        sx={{ minHeight: "100px", minWidth: "100px" }}
+        onClick={() => {
+          Router.push("/C");
+        }}
+      >
+        <Typography sx={{ fontSize: "50px" }}>C</Typography>
+      </Button>
     </Container>
   );
 }
