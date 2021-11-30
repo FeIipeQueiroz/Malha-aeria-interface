@@ -57,9 +57,9 @@ export const ColumnStyled = styled("div")`
   border-radius: 4px;
   flex-direction: column;
   min-width: 80%;
-  min-height: 90px;
-  max-height: 90px;
-  flex-wrap: nowrap;
+  min-height: 120px;
+  max-height: 120px;
+  flex-wrap: wrap;
   :hover {
     transform: scale(1);
   }

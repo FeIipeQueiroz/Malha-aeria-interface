@@ -18,6 +18,7 @@ export default function Search() {
     loading,
     searchDone,
     sendCities,
+    routes,
   } = useIndex(ApiService);
 
   return (
@@ -59,13 +60,9 @@ export default function Search() {
         )}
         {searchDone && (
           <List>
-            <ListItem color="success" secondColor="#77a873" />
-            <ListItem color="success" secondColor="#77a873" />
-            <ListItem color="success" secondColor="#77a873" />
-            <ListItem color="success" secondColor="#77a873" />
-            <ListItem color="success" secondColor="#77a873" />
-            <ListItem color="success" secondColor="#77a873" />
-            <ListItem color="success" secondColor="#77a873" />
+            {routes.map((route) => (
+              <ListItem color="success" secondColor="#77a873" route={route} />
+            ))}
           </List>
         )}
       </Card>

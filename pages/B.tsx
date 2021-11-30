@@ -19,7 +19,7 @@ export default function Search() {
     searchDone,
     sendCities,
   } = useIndex(ApiService);
-
+  let numbers = [1, 2, 3, 4, 5, 6, 7];
   return (
     <Container sx={{ alignItems: "center" }}>
       <Row>
@@ -59,13 +59,9 @@ export default function Search() {
         )}
         {searchDone && (
           <List>
-            <ListItem color="info" secondColor="#7eaee1" />
-            <ListItem color="info" secondColor="#7eaee1" />
-            <ListItem color="info" secondColor="#7eaee1" />
-            <ListItem color="info" secondColor="#7eaee1" />
-            <ListItem color="info" secondColor="#7eaee1" />
-            <ListItem color="info" secondColor="#7eaee1" />
-            <ListItem color="info" secondColor="#7eaee1" />
+            {numbers.map((element) => (
+              <ListItem color="info" secondColor="#7eaee1" />
+            ))}
           </List>
         )}
       </Card>
