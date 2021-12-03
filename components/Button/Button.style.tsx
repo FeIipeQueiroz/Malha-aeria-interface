@@ -3,9 +3,11 @@ import { Button } from "@mui/material";
 
 export const ButtonStyled = styled(Button)`
   :hover {
-    transform: scale(1);
+  }
+  :active {
+    transform: scale(0.9);
   }
 
-  transform: scale(0.9);
-  transition: transform ease 0.3s;
+  transform: scale(1);
+  transition: transform ease-in-out 100ms;
 `;

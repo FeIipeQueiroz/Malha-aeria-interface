@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, Divider } from "@mui/material";
 import TextInput from "../components/TextInput/TextInput";
 import Row from "../components/Row/Row";
 import Card from "../components/Card/Card";
@@ -18,8 +18,9 @@ export default function Search() {
     loading,
     searchDone,
     sendCities,
+    routes,
   } = useIndex(ApiService);
-  let numbers = [1, 2, 3, 4, 5, 6, 7];
+
   return (
     <Container sx={{ alignItems: "center" }}>
       <Row>
@@ -59,8 +60,8 @@ export default function Search() {
         )}
         {searchDone && (
           <List>
-            {numbers.map((element) => (
-              <ListItem color="info" secondColor="#7eaee1" />
+            {routes.map((route) => (
+              <ListItem color="info" secondColor="#7eaee1" route={route} />
             ))}
           </List>
         )}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, Divider } from "@mui/material";
 import TextInput from "../components/TextInput/TextInput";
 import Row from "../components/Row/Row";
 import Card from "../components/Card/Card";

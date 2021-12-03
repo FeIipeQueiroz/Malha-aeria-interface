@@ -18,8 +18,9 @@ export default function Search() {
     loading,
     searchDone,
     sendCities,
+    routes,
   } = useIndex(ApiService);
-  let numbers = [1, 2, 3, 4, 5, 6, 7];
+
   return (
     <Container sx={{ alignItems: "center" }}>
       <Row>
@@ -59,8 +60,8 @@ export default function Search() {
         )}
         {searchDone && (
           <List>
-            {numbers.map((element) => (
-              <ListItem color="warning" secondColor="#fa8e5d" />
+            {routes.map((route) => (
+              <ListItem color="warning" secondColor="#fa8e5d" route={route} />
             ))}
           </List>
         )}
