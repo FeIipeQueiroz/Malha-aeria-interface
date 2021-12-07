@@ -112,7 +112,7 @@ export const ColumnStyled = styled("div")`
 
 export const RowContent = styled("div")`
   display: flex;
-  max-width: 80%;
+  max-width: 50vw;
   min-height: 130px;
   overflow: auto;
   align-items: center;

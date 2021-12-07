@@ -114,11 +114,21 @@ export function useIndex(ApiService: AxiosInstance) {
   function sendCities(origin: string, destination: string) {
     setSearchDone(false);
     setLoading(true);
-    setTimeout(() => {
-      console.log(origin, destination);
-      setLoading(false);
-      setSearchDone(true);
-    }, 1000);
+    let i = 0;
+
+    const loop = setInterval(async () => {
+      const response = await ApiService.post("/searchRoutes", {
+        origem: origin,
+        destino: destination,
+      });
+      console.log(response.data);
+      if (response.data.status == "Não sou o coordenador") {
+      } else {
+        setSearchDone(true);
+        setLoading(false);
+        clearInterval(loop);
+      }
+    }, 3000);
   }
 
   return {

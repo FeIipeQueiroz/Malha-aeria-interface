@@ -60,8 +60,13 @@ export default function Search() {
         )}
         {searchDone && (
           <List>
-            {routes.map((route) => (
-              <ListItem color="info" secondColor="#7eaee1" route={route} />
+            {routes.map((route, index) => (
+              <ListItem
+                color="info"
+                secondColor="#7eaee1"
+                route={route}
+                key={index}
+              />
             ))}
           </List>
         )}

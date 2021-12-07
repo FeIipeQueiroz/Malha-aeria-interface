@@ -6,19 +6,20 @@ import {
   RowContent,
   DividerStyled,
 } from "./ListItem.style";
-import Row from "../Row/Row";
 import Button from "../Button/Button";
 import { Link } from "../../data/@types/LinkInterface";
+
 interface ListItemProps {
   color: string;
   secondColor: string;
   route: Link[];
+  key: number;
 }
 
 const ListItem = (props) => {
   let color = props.color;
   let secondColor = props.secondColor;
-  console.log(color);
+
   return (
     <>
       <ListItemStyled>
@@ -48,12 +49,13 @@ const ListItem = (props) => {
           color={color}
           variant="contained"
           sx={{ minWidth: "170px", minHeight: "90px", maxHeight: "90px" }}
-          onClick={() => {}}
+          onClick={(e) => {
+            console.log(props.route);
+          }}
         >
           COMPRAR
         </Button>
       </ListItemStyled>
-      <DividerStyled color={color} />
     </>
   );
 };
