@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Divider } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import TextInput from "../components/TextInput/TextInput";
 import Row from "../components/Row/Row";
 import Card from "../components/Card/Card";
@@ -19,10 +19,18 @@ export default function Search() {
     searchDone,
     sendCities,
     routes,
+    message,
+    purchaseRoute,
   } = useIndex(ApiService);
 
   return (
-    <Container sx={{ alignItems: "center" }}>
+    <Container
+      sx={{
+        alignItems: "space-between",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Row>
         <TextInput
           value={origin}
@@ -50,6 +58,15 @@ export default function Search() {
           ENVIAR
         </Button>
       </Row>
+      {message != null && (
+        <Typography
+          color={message.status}
+          fontSize={"28px"}
+          sx={{ alignSelf: "center" }}
+        >
+          {message.text}
+        </Typography>
+      )}
       <Card data-color="#2e7d32">
         {loading && (
           <CircularProgress
@@ -66,6 +83,7 @@ export default function Search() {
                 secondColor="#77a873"
                 route={route}
                 key={index}
+                onClick={purchaseRoute}
               />
             ))}
           </List>

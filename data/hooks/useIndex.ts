@@ -2,6 +2,7 @@ import { AxiosInstance } from "axios";
 import { useState } from "react";
 import { Link } from "../@types/LinkInterface";
 export function useIndex(ApiService: AxiosInstance) {
+  const [message, setMessage] = useState(null);
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
   const [loading, setLoading] = useState(false);
@@ -116,7 +117,7 @@ export function useIndex(ApiService: AxiosInstance) {
     setLoading(true);
     let i = 0;
 
-    const loop = setInterval(async () => {
+    /*const loop = setInterval(async () => {
       const response = await ApiService.post("/searchRoutes", {
         origem: origin,
         destino: destination,
@@ -126,6 +127,27 @@ export function useIndex(ApiService: AxiosInstance) {
       } else {
         setSearchDone(true);
         setLoading(false);
+        clearInterval(loop);
+      }
+    }, 3000);*/
+    setSearchDone(true);
+    setLoading(false);
+  }
+
+  function purchaseRoute(route: Link[]) {
+    setMessage(null);
+    const loop = setInterval(async () => {
+      const response = await ApiService.post("/searchRoutes", {
+        origem: origin,
+        destino: destination,
+      });
+
+      if (response.data.status == "Não sou o coordenador") {
+      } else if (response.data.status == "Reservado com Sucesso") {
+        setMessage({ status: "sucess", text: response.data.status });
+        clearInterval(loop);
+      } else if (response.data.status == "Não foi possível") {
+        setMessage({ status: "error", text: response.data.status });
         clearInterval(loop);
       }
     }, 3000);
@@ -140,5 +162,7 @@ export function useIndex(ApiService: AxiosInstance) {
     searchDone,
     sendCities,
     routes,
+    message,
+    purchaseRoute,
   };
 }

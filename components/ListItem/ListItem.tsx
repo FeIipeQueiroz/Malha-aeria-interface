@@ -19,6 +19,7 @@ interface ListItemProps {
 const ListItem = (props) => {
   let color = props.color;
   let secondColor = props.secondColor;
+  const clickHandle = props.onClick;
 
   return (
     <>
@@ -50,7 +51,7 @@ const ListItem = (props) => {
           variant="contained"
           sx={{ minWidth: "170px", minHeight: "90px", maxHeight: "90px" }}
           onClick={(e) => {
-            console.log(props.route);
+            clickHandle(props.route);
           }}
         >
           COMPRAR

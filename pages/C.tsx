@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import TextInput from "../components/TextInput/TextInput";
 import Row from "../components/Row/Row";
 import Card from "../components/Card/Card";
@@ -19,6 +19,8 @@ export default function Search() {
     searchDone,
     sendCities,
     routes,
+    message,
+    purchaseRoute,
   } = useIndex(ApiService);
 
   return (
@@ -50,6 +52,15 @@ export default function Search() {
           ENVIAR
         </Button>
       </Row>
+      {message != null && (
+        <Typography
+          color={message.status}
+          fontSize={"28px"}
+          sx={{ alignSelf: "center" }}
+        >
+          {message.text}
+        </Typography>
+      )}
       <Card data-color="e65100">
         {loading && (
           <CircularProgress
@@ -66,6 +77,7 @@ export default function Search() {
                 secondColor="#fa8e5d"
                 route={route}
                 key={index}
+                onClick={purchaseRoute}
               />
             ))}
           </List>
