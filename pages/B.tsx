@@ -24,7 +24,13 @@ export default function Search() {
   } = useIndex(ApiService);
 
   return (
-    <Container sx={{ alignItems: "center" }}>
+    <Container
+      sx={{
+        alignItems: "space-between",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Row>
         <TextInput
           value={origin}

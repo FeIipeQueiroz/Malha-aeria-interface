@@ -31,7 +31,7 @@ const ListItem = (props) => {
                 <Typography
                   sx={{ fontSize: "1.2rem", margin: "0px", padding: "0px" }}
                 >
-                  {element.origin} {element.destin}
+                  De {element.Origem} Para {element.Destino}
                 </Typography>
                 <Typography variant="caption" sx={{ fontSize: "0.75rem" }}>
                   R$ {element.valor}
